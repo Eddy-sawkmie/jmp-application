@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JMP Dental & Implant Centre</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                JMP <span>Dental & Implant Centre</span>
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary-custom"
+                           href="tel:+916009321822">
+                            <i class="bi bi-telephone"></i>
+                            Call Now
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="badge bg-primary mb-3 px-3 py-2">
+                    JMP Dental & Implant Centre
+                </span>
+
+                <h1>
+                    Your Smile,
+                    Our Priority.
+                </h1>
+
+                <p>
+                    Comprehensive dental care with modern treatment
+                    options and a patient-focused approach.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#services"
+                       class="btn btn-primary-custom me-2">
+                        Explore Services
+                    </a>
+
+                    <a href="tel:+916009321822"
+                       class="btn btn-light px-4 py-3">
+                        <i class="bi bi-telephone"></i>
+                        Call Clinic
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+         (loaded from js/about-section.js)
+    ========================= -->
+
+    <div id="about"></div>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section id="services"
+             style="background: #f8fbff;">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span class="text-primary fw-semibold">
+                    OUR SERVICES
+                </span>
+
+                <h2 class="mt-2">
+                    Complete Dental Care
+                </h2>
+
+                <p>
+                    Explore our dental treatments and services.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <!-- General Dentistry -->
+
+                <div class="col-md-6 col-lg-4">
+
+<div class="service-card"
+                         onclick="openGeneralDentistrySheet()">
+
+                        <div class="service-icon">
+                            <i class="bi bi-emoji-smile"></i>
+                        </div>
+
+                        <h4>
+                            General Dentistry
+                        </h4>
+
+                        <p>
+                            Essential dental care for maintaining
+                            healthy teeth and gums.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teeth Whitening -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card"
+                         onclick="openServiceSheet(
+                             'Teeth Whitening',
+                             'bi bi-stars'
+                         )">
+
+                        <div class="service-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+
+                        <h4>
+                            Teeth Whitening
+                        </h4>
+
+                        <p>
+                            Improve the appearance of your smile
+                            with professional whitening.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DENTAL IMPLANTS -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card"
+                         onclick="openDentalImplantsSheet()">
+
+                        <div class="service-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+
+                        <h4>
+                            Dental Implants
+                        </h4>
+
+                        <p>
+                            Explore implants, crowns and bridges
+                            for restoring your smile.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Root Canal -->
+
+                <div class="col-md-6 col-lg-4">
+
+<div class="service-card"
+                     onclick="openRootCanalSheet()">
+
+                        <div class="service-icon">
+                            <i class="bi bi-bandaid"></i>
+                        </div>
+
+                        <h4>
+                            Root Canal Treatment
+                        </h4>
+
+                        <p>
+                            Treatment to save infected or damaged
+                            teeth and relieve pain.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Orthodontics -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card"
+                         onclick="openServiceSheet(
+                             'Orthodontics',
+                             'bi bi-person-hearts'
+                         )">
+
+                        <div class="service-icon">
+                            <i class="bi bi-person-hearts"></i>
+                        </div>
+
+                        <h4>
+                            Orthodontics
+                        </h4>
+
+                        <p>
+                            Options to improve tooth alignment
+                            and your smile.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Preventive Care -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card"
+                         onclick="openServiceSheet(
+                             'Preventive Care',
+                             'bi bi-shield-check'
+                         )">
+
+                        <div class="service-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <h4>
+                            Preventive Care
+                        </h4>
+
+                        <p>
+                            Regular dental care to help maintain
+                            healthy teeth and gums.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <div class="row g-5">
+
+                    <div class="col-lg-6">
+
+                        <span class="text-primary fw-semibold">
+                            CONTACT US
+                        </span>
+
+                        <h2 class="mt-2">
+                            We're Here to Help
+                        </h2>
+
+                        <p class="mt-3">
+                            Contact JMP Dental & Implant Centre
+                            to request an appointment or learn
+                            more about our services.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="contact-item">
+
+                            <i class="bi bi-telephone-fill"></i>
+
+                            <div>
+                                <strong>Phone</strong>
+
+                                <div>
+                                    <a href="tel:+916009321822">
+                                        +91 60093 21822
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <a href="tel:+916000857460">
+                                        +91 60008 57460
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                            <div>
+                                <strong>Location</strong>
+                                <p class="mb-0">
+                                    Meghalaya, India
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <i class="bi bi-clock-fill"></i>
+
+                            <div>
+                                <strong>Opening Hours</strong>
+                                <p class="mb-0">
+                                    Monday – Saturday
+                                    <br>
+                                    9:00 AM – 6:00 PM
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+
+                    <h5>
+                        JMP Dental & Implant Centre
+                    </h5>
+
+                    <p>
+                        Modern dental care focused on your
+                        oral health and confident smile.
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-3">
+
+                    <h5>Quick Links</h5>
+
+                    <div class="d-flex flex-column gap-2">
+
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#contact">Contact</a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3">
+
+                    <h5>Contact</h5>
+
+                    <p class="mb-1">
+                        +91 60093 21822
+                    </p>
+
+                    <p>
+                        +91 60008 57460
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+
+                <small>
+                    © 2026 JMP Dental & Implant Centre.
+                    All Rights Reserved.
+                </small>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/about-section.js"></script>
+
+
+    <!-- =========================
+         OVERLAY
+    ========================= -->
+
+    <div id="serviceOverlay"
+         class="service-overlay"
+         onclick="closeServiceSheet()">
+    </div>
+
+
+    <!-- =========================
+         BOTTOM SHEET
+    ========================= -->
+
+    <div id="serviceSheet"
+         class="service-bottom-sheet">
+
+        <div class="sheet-handle"></div>
+
+        <div class="sheet-header">
+
+            <div class="sheet-icon">
+
+                <i id="sheetIcon"
+                   class="bi bi-heart-pulse"></i>
+
+            </div>
+
+            <div>
+
+                <h4 id="sheetTitle">
+                    Dental Implants
+                </h4>
+
+                <p>
+                    Choose a treatment to learn more
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dynamic options appear here -->
+
+        <div id="sheetOptions"></div>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <script>
+
+        /*
+        =========================================
+        OPEN NORMAL SERVICE
+        =========================================
+        */
+
+        function openServiceSheet(title, icon) {
+
+            document.getElementById("sheetTitle").innerText = title;
+
+            document.getElementById("sheetIcon").className = icon;
+
+            document.getElementById("sheetOptions").innerHTML = `
+
+                <a href="#"
+                   class="service-option">
+
+                    <div class="service-option-icon">
+                        <i class="bi bi-info-circle"></i>
+                    </div>
+
+                    <div class="service-option-content">
+
+                        <strong>
+                            View Details
+                        </strong>
+
+                        <span>
+                            Learn more about this service
+                        </span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-right service-option-arrow"></i>
+
+                </a>
+
+                <a href="tel:+916009321822"
+                   class="service-option">
+
+                    <div class="service-option-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+
+                    <div class="service-option-content">
+
+                        <strong>
+                            Contact Clinic
+                        </strong>
+
+                        <span>
+                            Speak with our clinic
+                        </span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-right service-option-arrow"></i>
+
+                </a>
+
+            `;
+
+            showServiceSheet();
+        }
+
+
+        /*
+        =========================================
+        DENTAL IMPLANTS SERVICE
+        =========================================
+        */
+
+        function openDentalImplantsSheet() {
+
+            document.getElementById("sheetTitle").innerText =
+                "Dental Implants";
+
+            document.getElementById("sheetIcon").className =
+                "bi bi-heart-pulse";
+
+
+            document.getElementById("sheetOptions").innerHTML = `
+
+                <!-- Dental Implants -->
+
+          
+
+
+                <!-- Crowns -->
+
+       
+
+
+                <!-- Bridges -->
+
+                <a href="services/dental-implants.html" class="service-option">
+    <i class="bi bi-heart-pulse"></i>
+    <div>
+        <strong>Dental Implants</strong>
+        <small>Replace missing teeth</small>
+    </div>
+</a>
+
+<a href="services/crowns.html" class="service-option">
+    <i class="bi bi-shield-check"></i>
+    <div>
+        <strong>Crowns</strong>
+        <small>Restore and protect damaged teeth</small>
+    </div>
+</a>
+
+<a href="services/bridges.html" class="service-option">
+    <i class="bi bi-grid-3x3-gap"></i>
+    <div>
+        <strong>Crown & Bridges</strong>
+        <small>Replace missing teeth</small>
+    </div>
+</a>
+
+
+            `;
+
+            showServiceSheet();
+        }
+
+
+        /*
+        =========================================
+        GENERAL DENTISTRY SERVICE
+        =========================================
+        */
+
+        function openGeneralDentistrySheet() {
+
+            document.getElementById("sheetTitle").innerText =
+                "General Dentistry";
+
+            document.getElementById("sheetIcon").className =
+                "bi bi-emoji-smile";
+
+            document.getElementById("sheetOptions").innerHTML = `
+
+                <a href="services/general-dentistry.html" class="service-option">
+                    <i class="bi bi-emoji-smile"></i>
+                    <div>
+                        <strong>General Dentistry</strong>
+                        <small>Complete dental care overview</small>
+                    </div>
+                </a>
+
+                <a href="services/dental-checkups.html" class="service-option">
+                    <i class="bi bi-clipboard2-pulse"></i>
+                    <div>
+                        <strong>Dental Check-ups & Oral Examinations</strong>
+                        <small>Routine examinations</small>
+                    </div>
+                </a>
+
+                <a href="services/teeth-cleaning.html" class="service-option">
+                    <i class="bi bi-droplet-half"></i>
+                    <div>
+                        <strong>Teeth Cleaning & Scaling</strong>
+                        <small>Plaque and tartar removal</small>
+                    </div>
+                </a>
+
+                <a href="services/dental-fillings.html" class="service-option">
+                    <i class="bi bi-plus-circle"></i>
+                    <div>
+                        <strong>Dental Fillings</strong>
+                        <small>Restore cavities and damage</small>
+                    </div>
+                </a>
+
+                <a href="services/root-canal.html" class="service-option">
+                    <i class="bi bi-bandaid"></i>
+                    <div>
+                        <strong>Root Canal Treatment</strong>
+                        <small>Save infected teeth</small>
+                    </div>
+                </a>
+
+                <a href="services/gum-treatment.html" class="service-option">
+                    <i class="bi bi-shield-check"></i>
+                    <div>
+                        <strong>Gum Disease Treatment</strong>
+                        <small>Gingivitis and periodontitis</small>
+                    </div>
+                </a>
+
+                <a href="services/tooth-extraction.html" class="service-option">
+                    <i class="bi bi-x-circle"></i>
+                    <div>
+                        <strong>Tooth Extraction</strong>
+                        <small>Safe tooth removal</small>
+                    </div>
+                </a>
+
+                <a href="services/childrens-dentistry.html" class="service-option">
+                    <i class="bi bi-person-hearts"></i>
+                    <div>
+                        <strong>Children's Dentistry</strong>
+                        <small>Gentle care for kids</small>
+                    </div>
+                </a>
+
+                <a href="services/emergency-dental-care.html" class="service-option">
+                    <i class="bi bi-bell"></i>
+                    <div>
+                        <strong>Emergency Dental Care</strong>
+                        <small>Urgent dental problems</small>
+                    </div>
+                </a>
+
+            `;
+
+            showServiceSheet();
+        }
+
+
+        /*
+        =========================================
+        ROOT CANAL SERVICE
+        =========================================
+        */
+
+        function openRootCanalSheet() {
+
+            document.getElementById("sheetTitle").innerText =
+                "Root Canal Treatment";
+
+            document.getElementById("sheetIcon").className =
+                "bi bi-bandaid";
+
+            document.getElementById("sheetOptions").innerHTML = `
+
+                <a href="services/root-canal.html" class="service-option">
+                    <i class="bi bi-bandaid"></i>
+                    <div>
+                        <strong>Root Canal Treatment</strong>
+                        <small>Save infected teeth and relieve pain</small>
+                    </div>
+                </a>
+
+            `;
+
+            showServiceSheet();
+        }
+
+
+        /*
+        =========================================
+        SHOW SHEET
+        =========================================
+        */
+
+        function showServiceSheet() {
+
+            document
+                .getElementById("serviceOverlay")
+                .classList.add("active");
+
+            document
+                .getElementById("serviceSheet")
+                .classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        /*
+        =========================================
+        CLOSE SHEET
+        =========================================
+        */
+
+        function closeServiceSheet() {
+
+            document
+                .getElementById("serviceOverlay")
+                .classList.remove("active");
+
+            document
+                .getElementById("serviceSheet")
+                .classList.remove("active");
+
+            document.body.style.overflow = "";
+        }
+
+
+        /*
+        =========================================
+        ESC KEY
+        =========================================
+        */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+                closeServiceSheet();
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

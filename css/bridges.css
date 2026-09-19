@@ -1,0 +1,379 @@
+:root {
+            --primary: #0d6efd;
+            --dark: #12304a;
+            --light-blue: #eef7ff;
+            --text: #5f6f7f;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .navbar-brand span {
+            color: var(--dark);
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .service-hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(7, 38, 63, 0.75),
+                    rgba(7, 38, 63, 0.75)
+                ),
+                url("../images/bridges-hero.png")
+                center/cover;
+        }
+
+        .service-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(7, 38, 63, 0.55), rgba(7, 38, 63, 0.05));
+            pointer-events: none;
+        }
+
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            color: white;
+        }
+
+        .service-hero-content h1 {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 20px;
+        }
+
+        .service-hero-content h1 span {
+            color: #6ea8fe;
+        }
+
+        .service-hero-content p {
+            color: #eef7ff;
+            font-size: 1.1rem;
+            max-width: 660px;
+            line-height: 1.8;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 22px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           IMAGES
+        ========================= */
+
+        .content-image {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 20px 50px rgba(18, 48, 74, 0.18);
+        }
+
+        .content-image.tall {
+            height: 520px;
+        }
+
+        .content-image.short {
+            height: 380px;
+        }
+
+        @media (max-width: 991px) {
+            .content-image,
+            .content-image.tall {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-image,
+            .content-image.tall,
+            .content-image.short {
+                height: 280px;
+            }
+        }
+
+        /* =========================
+           CHECK LIST
+        ========================= */
+
+        .crown-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .crown-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .crown-list .check-icon {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 50%;
+            background: var(--light-blue);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            margin-top: 1px;
+        }
+
+        /* =========================
+           INFO CARDS
+        ========================= */
+
+        .info-card {
+            height: 100%;
+            padding: 32px;
+            background: #ffffff;
+            border: 1px solid #e7edf3;
+            border-radius: 20px;
+            transition: 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(13, 110, 253, 0.12);
+        }
+
+        .info-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: var(--light-blue);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .info-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           STEP TIMELINE
+        ========================= */
+
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 34px;
+            position: relative;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            min-width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.15rem;
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+        }
+
+        .step h4 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .step p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .step .step-dot {
+            color: var(--primary);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background:
+                linear-gradient(rgba(18, 48, 74, 0.94), rgba(18, 48, 74, 0.94)),
+                url("../images/bridges-smile.jpg")
+                center/cover;
+            border-radius: 28px;
+            padding: 70px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        .cta p {
+            color: #cbd7e2;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background: #0b5ed7;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.35);
+        }
+
+        .btn-outline-light-custom {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .btn-outline-light-custom:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        /* =========================
+           CHECKLIST SECTION
+        ========================= */
+
+        .candidate-box {
+            background: var(--light-blue);
+            border-radius: 24px;
+            padding: 45px;
+            height: 100%;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--dark);
+            color: #cbd7e2;
+            padding: 50px 0 25px;
+        }
+
+        footer h5 {
+            color: white;
+        }
+
+        footer a {
+            color: #cbd7e2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .candidate-box {
+                padding: 30px 24px;
+            }
+
+            .cta {
+                padding: 45px 22px;
+            }
+        }
