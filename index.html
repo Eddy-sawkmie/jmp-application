@@ -153,24 +153,25 @@
 
             <div class="row g-4">
 
-                <!-- General Dentistry -->
+                <!-- General Care -->
 
                 <div class="col-md-6 col-lg-4">
 
-<div class="service-card"
-                         onclick="openGeneralDentistrySheet()">
+                    <div class="service-card"
+                         onclick="openGeneralCareSheet()">
 
                         <div class="service-icon">
                             <i class="bi bi-emoji-smile"></i>
                         </div>
 
                         <h4>
-                            General Dentistry
+                            General Care
                         </h4>
 
                         <p>
-                            Essential dental care for maintaining
-                            healthy teeth and gums.
+                            Comprehensive dental care including
+                            cavity treatments, preventative care,
+                            and emergency services.
                         </p>
 
                         <i class="bi bi-arrow-up-right service-arrow"></i>
@@ -180,27 +181,52 @@
                 </div>
 
 
-                <!-- Teeth Whitening -->
+                <!-- Orthodontic Care -->
 
                 <div class="col-md-6 col-lg-4">
 
                     <div class="service-card"
-                         onclick="openServiceSheet(
-                             'Teeth Whitening',
-                             'bi bi-stars'
-                         )">
+                         onclick="openOrthodonticCareSheet()">
+
+                        <div class="service-icon">
+                            <i class="bi bi-person-hearts"></i>
+                        </div>
+
+                        <h4>
+                            Orthodontic Care
+                        </h4>
+
+                        <p>
+                            Teeth alignment solutions including
+                            braces and clear aligners for a
+                            perfect smile.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Cosmetic Care -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card"
+                         onclick="openCosmeticCareSheet()">
 
                         <div class="service-icon">
                             <i class="bi bi-stars"></i>
                         </div>
 
                         <h4>
-                            Orthodontics
+                            Cosmetic Care
                         </h4>
 
                         <p>
-                             Options to improve tooth alignment
-                            and your smile.
+                            Enhance your smile with teeth whitening,
+                            bonding, veneers, and cosmetic repairs.
                         </p>
 
                         <i class="bi bi-arrow-up-right service-arrow"></i>
@@ -210,7 +236,35 @@
                 </div>
 
 
-                <!-- DENTAL IMPLANTS -->
+                <!-- Specialty Care -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card"
+                         onclick="openSpecialtyCareSheet()">
+
+                        <div class="service-icon">
+                            <i class="bi bi-hospital"></i>
+                        </div>
+
+                        <h4>
+                            Specialty Care
+                        </h4>
+
+                        <p>
+                            Specialized treatments including pediatric
+                            care, oral surgery, periodontics, and
+                            endodontics.
+                        </p>
+
+                        <i class="bi bi-arrow-up-right service-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Dental Implants -->
 
                 <div class="col-md-6 col-lg-4">
 
@@ -226,95 +280,8 @@
                         </h4>
 
                         <p>
-                            Explore implants, crowns and bridges
-                            for restoring your smile.
-                        </p>
-
-                        <i class="bi bi-arrow-up-right service-arrow"></i>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Root Canal -->
-
-                <div class="col-md-6 col-lg-4">
-
-<div class="service-card"
-                     onclick="openRootCanalSheet()">
-
-                        <div class="service-icon">
-                            <i class="bi bi-bandaid"></i>
-                        </div>
-
-                        <h4>
-                            Root Canal Treatment
-                        </h4>
-
-                        <p>
-                            Treatment to save infected or damaged
-                            teeth and relieve pain.
-                        </p>
-
-                        <i class="bi bi-arrow-up-right service-arrow"></i>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Orthodontics -->
-
-                <div class="col-md-6 col-lg-4">
-
-                    <div class="service-card"
-                         onclick="openServiceSheet(
-                             'Orthodontics',
-                             'bi bi-person-hearts'
-                         )">
-
-                        <div class="service-icon">
-                            <i class="bi bi-person-hearts"></i>
-                        </div>
-
-                        <h4>
-                            Orthodontics
-                        </h4>
-
-                        <p>
-                            Options to improve tooth alignment
-                            and your smile.
-                        </p>
-
-                        <i class="bi bi-arrow-up-right service-arrow"></i>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Preventive Care -->
-
-                <div class="col-md-6 col-lg-4">
-
-                    <div class="service-card"
-                         onclick="openServiceSheet(
-                             'Preventive Care',
-                             'bi bi-shield-check'
-                         )">
-
-                        <div class="service-icon">
-                            <i class="bi bi-shield-check"></i>
-                        </div>
-
-                        <h4>
-                            Preventive Care
-                        </h4>
-
-                        <p>
-                            Regular dental care to help maintain
-                            healthy teeth and gums.
+                            Advanced implant solutions for single
+                            tooth replacement to full-mouth restoration.
                         </p>
 
                         <i class="bi bi-arrow-up-right service-arrow"></i>
@@ -516,7 +483,8 @@
     ========================= -->
 
     <div id="serviceSheet"
-         class="service-bottom-sheet">
+         class="service-bottom-sheet"
+         onclick="event.stopPropagation()">
 
         <div class="sheet-handle"></div>
 
@@ -541,6 +509,10 @@
 
             </div>
 
+            <button class="close-sheet-btn" onclick="closeServiceSheet()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
         </div>
 
 
@@ -561,63 +533,479 @@
 
         /*
         =========================================
-        OPEN NORMAL SERVICE
+        GENERAL CARE SERVICE
         =========================================
         */
 
-        function openServiceSheet(title, icon) {
+        function openGeneralCareSheet() {
 
-            document.getElementById("sheetTitle").innerText = title;
-
-            document.getElementById("sheetIcon").className = icon;
+            document.getElementById("sheetTitle").innerText = "General Care";
+            document.getElementById("sheetIcon").className = "bi bi-emoji-smile";
 
             document.getElementById("sheetOptions").innerHTML = `
 
-                <a href="#"
-                   class="service-option">
-
-                    <div class="service-option-icon">
-                        <i class="bi bi-info-circle"></i>
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Cavity Treatments</strong>
+                            <span>Restore and repair damaged teeth</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
                     </div>
-
-                    <div class="service-option-content">
-
-                        <strong>
-                            View Details
-                        </strong>
-
-                        <span>
-                            Learn more about this service
-                        </span>
-
+                    <div class="category-content">
+                        <a href="services/dental-fillings.html" class="service-option">
+                            <i class="bi bi-plus-circle"></i>
+                            <div>
+                                <strong>Non-Invasive Cavity Treatment</strong>
+                                <small>Early intervention treatments</small>
+                            </div>
+                        </a>
+                        <a href="services/dental-fillings.html" class="service-option">
+                            <i class="bi bi-plus-circle"></i>
+                            <div>
+                                <strong>Fillings</strong>
+                                <small>Restore cavities with modern materials</small>
+                            </div>
+                        </a>
+                        <a href="services/crowns.html" class="service-option">
+                            <i class="bi bi-shield-check"></i>
+                            <div>
+                                <strong>Crowns & Bridges</strong>
+                                <small>Restore and replace teeth</small>
+                            </div>
+                        </a>
+                        <a href="services/root-canal.html" class="service-option">
+                            <i class="bi bi-bandaid"></i>
+                            <div>
+                                <strong>Root Canal</strong>
+                                <small>Save infected teeth</small>
+                            </div>
+                        </a>
                     </div>
+                </div>
 
-                    <i class="bi bi-chevron-right service-option-arrow"></i>
-
-                </a>
-
-                <a href="tel:+916009321822"
-                   class="service-option">
-
-                    <div class="service-option-icon">
-                        <i class="bi bi-telephone"></i>
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Preventative Care</strong>
+                            <span>Maintain healthy teeth and gums</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
                     </div>
-
-                    <div class="service-option-content">
-
-                        <strong>
-                            Contact Clinic
-                        </strong>
-
-                        <span>
-                            Speak with our clinic
-                        </span>
-
+                    <div class="category-content">
+                        <a href="services/teeth-cleaning.html" class="service-option">
+                            <i class="bi bi-droplet-half"></i>
+                            <div>
+                                <strong>Cleanings & Exams</strong>
+                                <small>Routine dental checkups</small>
+                            </div>
+                        </a>
+                        <a href="services/dental-checkups.html" class="service-option">
+                            <i class="bi bi-clipboard2-pulse"></i>
+                            <div>
+                                <strong>Fluoride Treatment</strong>
+                                <small>Strengthen tooth enamel</small>
+                            </div>
+                        </a>
+                        <a href="services/dental-checkups.html" class="service-option">
+                            <i class="bi bi-grid-3x3-gap"></i>
+                            <div>
+                                <strong>Sealants</strong>
+                                <small>Protect teeth from decay</small>
+                            </div>
+                        </a>
+                        <a href="services/dental-checkups.html" class="service-option">
+                            <i class="bi bi-camera"></i>
+                            <div>
+                                <strong>X-Rays</strong>
+                                <small>Detailed dental imaging</small>
+                            </div>
+                        </a>
                     </div>
+                </div>
 
-                    <i class="bi bi-chevron-right service-option-arrow"></i>
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-grid-3x3-gap"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Dentures</strong>
+                            <span>Replace missing teeth</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-grid-3x3-gap"></i>
+                            <div>
+                                <strong>Complete & Partial Dentures</strong>
+                                <small>Custom tooth replacement solutions</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-                </a>
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-moon"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Sedation Dentistry</strong>
+                            <span>Comfortable dental experiences</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-moon"></i>
+                            <div>
+                                <strong>Anxiety-Free Dentistry</strong>
+                                <small>Relaxed treatment options</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-bell"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Emergency Dental Care</strong>
+                            <span>Urgent dental problems</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/emergency-dental-care.html" class="service-option">
+                            <i class="bi bi-bell"></i>
+                            <div>
+                                <strong>Emergency Services</strong>
+                                <small>Immediate dental care</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            `;
+
+            showServiceSheet();
+        }
+
+
+        /*
+        =========================================
+        ORTHODONTIC CARE SERVICE
+        =========================================
+        */
+
+        function openOrthodonticCareSheet() {
+
+            document.getElementById("sheetTitle").innerText = "Orthodontic Care";
+            document.getElementById("sheetIcon").className = "bi bi-person-hearts";
+
+            document.getElementById("sheetOptions").innerHTML = `
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-braces"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Braces</strong>
+                            <span>Traditional orthodontic treatment</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-braces"></i>
+                            <div>
+                                <strong>Metal Braces</strong>
+                                <small>Effective teeth alignment</small>
+                            </div>
+                        </a>
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-braces"></i>
+                            <div>
+                                <strong>Ceramic Braces</strong>
+                                <small>Less visible option</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Clear Aligners</strong>
+                            <span>Invisible teeth straightening</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-star"></i>
+                            <div>
+                                <strong>Clear Aligner Therapy</strong>
+                                <small>Removable, invisible treatment</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            `;
+
+            showServiceSheet();
+        }
+
+
+        /*
+        =========================================
+        COSMETIC CARE SERVICE
+        =========================================
+        */
+
+        function openCosmeticCareSheet() {
+
+            document.getElementById("sheetTitle").innerText = "Cosmetic Care";
+            document.getElementById("sheetIcon").className = "bi bi-stars";
+
+            document.getElementById("sheetOptions").innerHTML = `
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Teeth Whitening</strong>
+                            <span>Brighten your smile</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-stars"></i>
+                            <div>
+                                <strong>Professional Whitening</strong>
+                                <small>In-office whitening treatment</small>
+                            </div>
+                        </a>
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-stars"></i>
+                            <div>
+                                <strong>Take-Home Whitening</strong>
+                                <small>Custom whitening kits</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Chipped Tooth Repair</strong>
+                            <span>Restore damaged teeth</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-tools"></i>
+                            <div>
+                                <strong>Bonding</strong>
+                                <small>Composite resin repairs</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-gem"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Dental Bonding & Veneers</strong>
+                            <span>Transform your smile</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-gem"></i>
+                            <div>
+                                <strong>Dental Veneers</strong>
+                                <small>Porcelain smile transformation</small>
+                            </div>
+                        </a>
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-gem"></i>
+                            <div>
+                                <strong>Dental Bonding</strong>
+                                <small>Conservative cosmetic improvements</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            `;
+
+            showServiceSheet();
+        }
+
+
+        /*
+        =========================================
+        SPECIALTY CARE SERVICE
+        =========================================
+        */
+
+        function openSpecialtyCareSheet() {
+
+            document.getElementById("sheetTitle").innerText = "Specialty Care";
+            document.getElementById("sheetIcon").className = "bi bi-hospital";
+
+            document.getElementById("sheetOptions").innerHTML = `
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-person-hearts"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Pediatric Dental Care</strong>
+                            <span>Gentle care for children</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/childrens-dentistry.html" class="service-option">
+                            <i class="bi bi-person-hearts"></i>
+                            <div>
+                                <strong>Children's Dentistry</strong>
+                                <small>Specialized pediatric care</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-hospital"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Oral Surgery</strong>
+                            <span>Advanced surgical procedures</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/tooth-extraction.html" class="service-option">
+                            <i class="bi bi-x-circle"></i>
+                            <div>
+                                <strong>Tooth Extraction</strong>
+                                <small>Safe tooth removal</small>
+                            </div>
+                        </a>
+                        <a href="services/tooth-extraction.html" class="service-option">
+                            <i class="bi bi-x-circle"></i>
+                            <div>
+                                <strong>Wisdom Teeth Removal</strong>
+                                <small>Third molar extraction</small>
+                            </div>
+                        </a>
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-hospital"></i>
+                            <div>
+                                <strong>Bone Grafting</strong>
+                                <small>Rebuild bone structure</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Periodontics (Gum Care)</strong>
+                            <span>Gum disease treatment</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/gum-treatment.html" class="service-option">
+                            <i class="bi bi-heart"></i>
+                            <div>
+                                <strong>Gum Disease Treatment</strong>
+                                <small>Treat gingivitis and periodontitis</small>
+                            </div>
+                        </a>
+                        <a href="services/gum-treatment.html" class="service-option">
+                            <i class="bi bi-heart"></i>
+                            <div>
+                                <strong>Scaling & Root Planing</strong>
+                                <small>Deep cleaning treatment</small>
+                            </div>
+                        </a>
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-heart"></i>
+                            <div>
+                                <strong>Periodontal Flap Surgery</strong>
+                                <small>Advanced gum treatment</small>
+                            </div>
+                        </a>
+                        <a href="services/general-dentistry.html" class="service-option">
+                            <i class="bi bi-heart"></i>
+                            <div>
+                                <strong>Gum Grafting</strong>
+                                <small>Restore receding gums</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-category" onclick="toggleCategory(this)">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="bi bi-bandaid"></i>
+                        </div>
+                        <div class="category-title">
+                            <strong>Endodontics (Root Canal)</strong>
+                            <span>Save natural teeth</span>
+                        </div>
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-content">
+                        <a href="services/root-canal.html" class="service-option">
+                            <i class="bi bi-bandaid"></i>
+                            <div>
+                                <strong>Root Canal Treatment</strong>
+                                <small>Save infected teeth</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
             `;
 
@@ -633,143 +1021,56 @@
 
         function openDentalImplantsSheet() {
 
-            document.getElementById("sheetTitle").innerText =
-                "Dental Implants";
-
-            document.getElementById("sheetIcon").className =
-                "bi bi-heart-pulse";
-
+            document.getElementById("sheetTitle").innerText = "Dental Implants";
+            document.getElementById("sheetIcon").className = "bi bi-heart-pulse";
 
             document.getElementById("sheetOptions").innerHTML = `
-
-                <!-- Dental Implants -->
-
-          
-
-
-                <!-- Crowns -->
-
-       
-
-
-                <!-- Bridges -->
 
                 <a href="services/dental-implants.html" class="service-option">
-    <i class="bi bi-heart-pulse"></i>
-    <div>
-        <strong>Dental Implants</strong>
-        <small>Replace missing teeth</small>
-    </div>
-</a>
-
-<a href="services/crowns.html" class="service-option">
-    <i class="bi bi-shield-check"></i>
-    <div>
-        <strong>Crowns</strong>
-        <small>Restore and protect damaged teeth</small>
-    </div>
-</a>
-
-<a href="services/bridges.html" class="service-option">
-    <i class="bi bi-grid-3x3-gap"></i>
-    <div>
-        <strong>Crown & Bridges</strong>
-        <small>Replace missing teeth</small>
-    </div>
-</a>
-
-
-            `;
-
-            showServiceSheet();
-        }
-
-
-        /*
-        =========================================
-        GENERAL DENTISTRY SERVICE
-        =========================================
-        */
-
-        function openGeneralDentistrySheet() {
-
-            document.getElementById("sheetTitle").innerText =
-                "General Dentistry";
-
-            document.getElementById("sheetIcon").className =
-                "bi bi-emoji-smile";
-
-            document.getElementById("sheetOptions").innerHTML = `
-
-                <a href="services/general-dentistry.html" class="service-option">
-                    <i class="bi bi-emoji-smile"></i>
+                    <i class="bi bi-heart-pulse"></i>
                     <div>
-                        <strong>General Dentistry</strong>
-                        <small>Complete dental care overview</small>
+                        <strong>Single Tooth Implants</strong>
+                        <small>Replace individual missing teeth</small>
                     </div>
                 </a>
 
-                <a href="services/dental-checkups.html" class="service-option">
-                    <i class="bi bi-clipboard2-pulse"></i>
+                <a href="services/dental-implants.html" class="service-option">
+                    <i class="bi bi-heart-pulse"></i>
                     <div>
-                        <strong>Dental Check-ups & Oral Examinations</strong>
-                        <small>Routine examinations</small>
+                        <strong>Multiple Teeth Replacement</strong>
+                        <small>Replace several missing teeth</small>
                     </div>
                 </a>
 
-                <a href="services/teeth-cleaning.html" class="service-option">
-                    <i class="bi bi-droplet-half"></i>
+                <a href="services/dental-implants.html" class="service-option">
+                    <i class="bi bi-heart-pulse"></i>
                     <div>
-                        <strong>Teeth Cleaning & Scaling</strong>
-                        <small>Plaque and tartar removal</small>
+                        <strong>Full-Mouth Dental Implants / All-on-4</strong>
+                        <small>Complete smile restoration</small>
                     </div>
                 </a>
 
-                <a href="services/dental-fillings.html" class="service-option">
-                    <i class="bi bi-plus-circle"></i>
+                <a href="services/dental-implants.html" class="service-option">
+                    <i class="bi bi-heart-pulse"></i>
                     <div>
-                        <strong>Dental Fillings</strong>
-                        <small>Restore cavities and damage</small>
+                        <strong>Implant-Supported Dentures</strong>
+                        <small>Stable denture solutions</small>
                     </div>
                 </a>
 
-                <a href="services/root-canal.html" class="service-option">
-                    <i class="bi bi-bandaid"></i>
+                <a href="services/dental-implants.html" class="service-option">
+                    <i class="bi bi-heart-pulse"></i>
                     <div>
-                        <strong>Root Canal Treatment</strong>
-                        <small>Save infected teeth</small>
+                        <strong>Bone Grafting for Implants</strong>
+                        <small>Prepare for successful implants</small>
                     </div>
                 </a>
 
-                <a href="services/gum-treatment.html" class="service-option">
-                    <i class="bi bi-shield-check"></i>
+                <a href="services/dental-implants.html" class="service-option">
+                    <i class="bi bi-heart-pulse"></i>
                     <div>
-                        <strong>Gum Disease Treatment</strong>
-                        <small>Gingivitis and periodontitis</small>
-                    </div>
-                </a>
-
-                <a href="services/tooth-extraction.html" class="service-option">
-                    <i class="bi bi-x-circle"></i>
-                    <div>
-                        <strong>Tooth Extraction</strong>
-                        <small>Safe tooth removal</small>
-                    </div>
-                </a>
-
-                <a href="services/childrens-dentistry.html" class="service-option">
-                    <i class="bi bi-person-hearts"></i>
-                    <div>
-                        <strong>Children's Dentistry</strong>
-                        <small>Gentle care for kids</small>
-                    </div>
-                </a>
-
-                <a href="services/emergency-dental-care.html" class="service-option">
-                    <i class="bi bi-bell"></i>
-                    <div>
-                        <strong>Emergency Dental Care</strong>
-                        <small>Urgent dental problems</small>
+                        <strong>Implant Consultations & Care</strong>
+                        <small>Comprehensive implant planning</small>
                     </div>
                 </a>
 
@@ -781,31 +1082,23 @@
 
         /*
         =========================================
-        ROOT CANAL SERVICE
+        TOGGLE CATEGORY EXPANSION
         =========================================
         */
 
-        function openRootCanalSheet() {
+        function toggleCategory(element) {
+            const content = element.querySelector('.category-content');
+            const arrow = element.querySelector('.category-arrow');
 
-            document.getElementById("sheetTitle").innerText =
-                "Root Canal Treatment";
-
-            document.getElementById("sheetIcon").className =
-                "bi bi-bandaid";
-
-            document.getElementById("sheetOptions").innerHTML = `
-
-                <a href="services/root-canal.html" class="service-option">
-                    <i class="bi bi-bandaid"></i>
-                    <div>
-                        <strong>Root Canal Treatment</strong>
-                        <small>Save infected teeth and relieve pain</small>
-                    </div>
-                </a>
-
-            `;
-
-            showServiceSheet();
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                arrow.style.transform = 'rotate(0deg)';
+                element.classList.remove('expanded');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                arrow.style.transform = 'rotate(180deg)';
+                element.classList.add('expanded');
+            }
         }
 
 
